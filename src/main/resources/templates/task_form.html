@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create task</title>
+</head>
+<body>
+    <div>
+        <form th:object="${task}" method="post">
+            <div>
+                <p>Title: <input type="text" id="title" name="title"/></p>
+            </div>
+            <div>
+                <p>Label: <input type="text" id="label" name="label"/></p>
+            </div>
+            <div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

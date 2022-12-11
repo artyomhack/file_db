@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title list</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>Label</td>
+            </tr>
+            <tr th:each="task : ${tasks}">
+                <td style="border: 1px solid gray;
+                border-collapse: collapse"> <span th:text="${task.title}"></span></td>
+                <td style="border: 1px solid gray;
+                border-collapse: collapse"> <span th:text="${task.label}"></span></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

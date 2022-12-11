@@ -1,0 +1,43 @@
+apply plugin: 'java-library'
+
+buildscript {
+    ext {
+        springBootVersion = "2.7.5"
+        lombokVersion = "1.18.22"
+    }
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform();
+}
+
+
+dependencies {
+    api platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    implementation "org.projectlombok:lombok:$lombokVersion"
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.7.1'"
+
+
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+
+}
